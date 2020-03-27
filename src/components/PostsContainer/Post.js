@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CommentSection from "../CommentSection/CommentSectionContainer";
 import LikeSection from "./LikeSection";
 import PostHeader from "./PostHeader";
+import Time from "../CommentSection/Time";
 
 import "./Posts.css";
 
@@ -10,6 +11,8 @@ import "./Posts.css";
 const Post = props => {
   // set up state for the likes
   const [likes, setLikes] = useState(props.post.likes);
+  const [time, setTime] = useState(props.post.timestamp);
+  console.log("time ", time);
 
   const incrementLikes = () => {
     setLikes(likes + 1);
@@ -33,6 +36,7 @@ const Post = props => {
         postId={props.post.imageUrl}
         comments={props.post.comments}
       />
+      <Time timestamp={time} />
     </div>
   );
 };
