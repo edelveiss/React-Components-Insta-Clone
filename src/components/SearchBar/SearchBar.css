@@ -14,8 +14,27 @@
   text-align: center;
   color: #262626;
 }
+
 .image-wrapper {
   height: 50px;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.image-wrapper h1 {
+  font-family: "LaurenScript", sans-serif;
+  color: #222222;
+  margin-bottom: 1rem;
+  width: 72%;
+  border-left: 1px solid grey;
+  /*
+  font-family: "Cursif", sans-serif;
+  font-family: "Cursif & Lignes", sans-serif;
+
+  
+  font-family: "Reklame Script Regular DEMO", sans-serif;
+  */
 }
 
 .logo-image {
@@ -28,4 +47,13 @@
 
 .social {
   width: 50px;
+}
+
+.fab.fa-instagram {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.fas.fa-heart {
+  color: red;
 }
