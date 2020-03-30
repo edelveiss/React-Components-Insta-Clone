@@ -10,7 +10,7 @@ const SearchBar = () => {
         <h1>Instagram</h1>
       </div>
       <form className="search-form">
-        <input type="text" placeholder="&#128269; Search" />
+        <input type="text" placeholder="&#128269;Search" />
       </form>
       <div className="social-wrapper">
         <div className="social">

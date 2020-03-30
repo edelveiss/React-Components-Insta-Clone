@@ -12,7 +12,7 @@ const Post = props => {
   // set up state for the likes
   const [likes, setLikes] = useState(props.post.likes);
   const [time, setTime] = useState(props.post.timestamp);
-  console.log("time ", time);
+  //console.log("time ", time);
 
   const incrementLikes = () => {
     setLikes(likes + 1);
