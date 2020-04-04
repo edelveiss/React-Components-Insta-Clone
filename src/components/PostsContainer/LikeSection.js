@@ -13,7 +13,7 @@ const LikeSection = props => {
           <i onClick={props.incrementLikes} className="fas fa-heart" />
         </div>
         <div className="like-section-wrapper">
-          <i className="far fa-comment" />
+          <i onClick={props.commToggle} className="far fa-comment" />
         </div>
       </div>
       <p className="like-number">{props.likes} likes</p>

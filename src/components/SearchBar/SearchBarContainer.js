@@ -1,4 +1,5 @@
 // You do not need to change any code in this file
+
 import React from "react";
 import "./SearchBar.css";
 
@@ -10,7 +11,7 @@ const SearchBar = () => {
         <h1>Instagram</h1>
       </div>
       <form className="search-form">
-        <input type="text" placeholder="&#128269;Search" />
+        <input type="text" placeholder="&#128269; Search" />
       </form>
       <div className="social-wrapper">
         <div className="social">

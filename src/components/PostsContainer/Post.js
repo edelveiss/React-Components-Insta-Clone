@@ -12,10 +12,19 @@ const Post = props => {
   // set up state for the likes
   const [likes, setLikes] = useState(props.post.likes);
   const [time, setTime] = useState(props.post.timestamp);
+  const [commentToggle, setCommentToggle] = useState(false);
   //console.log("time ", time);
 
   const incrementLikes = () => {
     setLikes(likes + 1);
+  };
+  const commToggle = () => {
+    if (commentToggle) {
+      console.log(commToggle);
+      setCommentToggle(false);
+    } else {
+      setCommentToggle(true);
+    }
   };
 
   return (
@@ -31,10 +40,15 @@ const Post = props => {
           src={props.post.imageUrl}
         />
       </div>
-      <LikeSection incrementLikes={incrementLikes} likes={likes} />
+      <LikeSection
+        incrementLikes={incrementLikes}
+        likes={likes}
+        commToggle={commToggle}
+      />
       <CommentSection
         postId={props.post.imageUrl}
         comments={props.post.comments}
+        commentToggle={commentToggle}
       />
       <Time timestamp={time} />
     </div>
