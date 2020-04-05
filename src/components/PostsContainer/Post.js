@@ -13,18 +13,12 @@ const Post = props => {
   const [likes, setLikes] = useState(props.post.likes);
   const [time, setTime] = useState(props.post.timestamp);
   const [commentToggle, setCommentToggle] = useState(false);
-  //console.log("time ", time);
 
   const incrementLikes = () => {
     setLikes(likes + 1);
   };
   const commToggle = () => {
-    if (commentToggle) {
-      console.log(commToggle);
-      setCommentToggle(false);
-    } else {
-      setCommentToggle(true);
-    }
+    setCommentToggle(!commentToggle);
   };
 
   return (
@@ -45,11 +39,13 @@ const Post = props => {
         likes={likes}
         commToggle={commToggle}
       />
-      <CommentSection
-        postId={props.post.imageUrl}
-        comments={props.post.comments}
-        commentToggle={commentToggle}
-      />
+
+      {commentToggle ? (
+        <CommentSection
+          postId={props.post.imageUrl}
+          comments={props.post.comments}
+        />
+      ) : null}
       <Time timestamp={time} />
     </div>
   );
