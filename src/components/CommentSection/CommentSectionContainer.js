@@ -10,27 +10,23 @@ const CommentSection = props => {
   console.log(props.comments);
   const [data1, setData1] = useState(props.comments);
   const [newComment, setNewComment] = useState({
-    username: "Your Comment",
+    username: "",
     text: ""
   });
 
   const submitComment = event => {
     event.preventDefault();
 
-    setData1(
-      data1.push({
-        username: newComment.username,
-        text: newComment.text
-      })
-    );
-    console.log("submit data1", data1);
+    if (newComment.text) {
+      setData1(data1.concat(newComment));
+      //setData1(...data1,  newComment );
+
+      event.target.reset();
+      setNewComment({ username: "", text: "" });
+    }
   };
   const changeComment = event => {
-    setNewComment({
-      ...newComment,
-      username: "YourComment",
-      text: event.target.value
-    });
+    setNewComment({ username: "Guest", text: event.target.value });
   };
 
   return (
@@ -43,6 +39,7 @@ const CommentSection = props => {
       <CommentInput
         changeComment={changeComment}
         submitComment={submitComment}
+        newComment={newComment}
       />
     </div>
   );
