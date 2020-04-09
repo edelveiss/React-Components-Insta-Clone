@@ -3,6 +3,11 @@
   padding: 2px;
   margin-left: 4px;
 }
+
+.commentSectionDisplay {
+  opacity: 1;
+  transition: 1s;
+}
 .comment {
   font-size: 16px;
 }

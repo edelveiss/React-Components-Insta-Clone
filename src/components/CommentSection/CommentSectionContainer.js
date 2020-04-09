@@ -30,7 +30,7 @@ const CommentSection = props => {
   };
 
   return (
-    <div>
+    <div className="commentSectionDisplay">
       {console.log("data1 map ", data1)}
 
       {data1.map((element, index) => (
